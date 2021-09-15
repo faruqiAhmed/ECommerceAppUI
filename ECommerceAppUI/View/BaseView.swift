@@ -34,11 +34,40 @@ struct BaseView: View {
             HStack(spacing: 0){
                 // tabButton..
                 TabButton(Tab: .Home)
+                
                 TabButton(Tab: .Heart)
+                    .offset(x: -10)
+                Button {
+                    
+                } label:{
+                    Image("cart2")
+                        .resizable()
+                        .renderingMode(.template)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 26, height:  26)
+                        .offset(x: -1)
+                        .padding(18)
+                        .foregroundColor(.white)
+                        .background(Color("DarkBlue"))
+                        .clipShape(Circle())
+                      // Shadow..
+                        .shadow(color: Color.black.opacity(0.04), radius: 5, x: 5, y: 5)
+                        .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
+                    
+                }
+                .offset(y: -30)
+                
                 TabButton(Tab: .ClipBoard)
+                    .offset(x: 10)
                 TabButton(Tab: .Person)
                 
             }
+            .background(Color.white
+                            .clipShape(CustomCurveShape())
+                            .shadow(color: Color.black.opacity(0.04), radius: 5, x: -5, y: -5)
+                            .ignoresSafeArea(.container, edges: .bottom)
+            )
+            
             ,alignment: .bottom
         
         )
